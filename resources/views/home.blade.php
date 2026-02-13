@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Calculadora Sueldo Neto</title>
+    <title>Home</title>
 
     {{-- Icon page --}}
     <link rel="icon" href="https://static-00.iconduck.com/assets.00/devicon-plain-icon-2048x1941-ps18p8i9.png">
@@ -17,7 +17,7 @@
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg bg-body-tertiary mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{ route('home') }}">Calculadora Sueldo Neto</a>
+                <a class="navbar-brand" href="{{ route('home') }}">Dev</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -66,7 +66,7 @@
                     <div class="col-sm-12">
                         <button type="button" class="btn btn-success" data-bs-toggle="modal"
                             data-bs-target="#modal-add-worker">
-                            <i class="fas fa-plus"></i> Agregar colaborador
+                            Agregar colaborador
                         </button>
                     </div>
                 </div>
@@ -85,9 +85,9 @@
                                         <th>Apellido Paterno</th>
                                         <th>Apellido Materno</th>
                                         <th>DNI</th>
-                                        <th>Área</th>
-                                        <th>Cargo</th>
-                                        <th>Sueldo</th>
+                                        <th>Fecha Nacimiento</th>
+                                        <th>Sexo</th>
+                                        <th>Cant. Hijos</th>
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>
@@ -99,26 +99,26 @@
                                             <td>{{ $worker->apellido_paterno }}</td>
                                             <td>{{ $worker->apellido_materno }}</td>
                                             <td>{{ $worker->dni }}</td>
-                                            <td>{{ $worker->area }}</td>
-                                            <td>{{ $worker->cargo }}</td>
-                                            <td>S/ {{ number_format($worker->sueldo, 2) }}</td>
+                                            <td>{{ date('d/m/Y', strtotime($worker->fecha_nacimiento)) }}</td>
+                                            <td>{{ $worker->sexo }}</td>
+                                            <td>{{ $worker->cantidad_hijos }}</td>
                                             <td>
-                                                <button type="button" class="btn btn-info btn-sm" 
+                                                <button type="button" class="btn btn-secondary btn-sm" 
                                                         onclick="verDetalle({{ $worker->id }})"
                                                         title="Ver detalle de sueldo">
-                                                    <i class="fas fa-eye"></i>
+                                                    Ver
                                                 </button>
 
                                                 <button type="button" class="btn btn-primary btn-sm" 
                                                         onclick="editarWorker({{ $worker->id }})"
                                                         title="Editar">
-                                                    <i class="fas fa-edit"></i>
+                                                    Editar
                                                 </button>
 
                                                 <button type="button" class="btn btn-danger btn-sm" 
                                                         onclick="eliminarWorker({{ $worker->id }})"
                                                         title="Eliminar">
-                                                    <i class="fas fa-trash"></i>
+                                                    Eliminar
                                                 </button>
                                             </td>
                                         </tr>
@@ -276,10 +276,10 @@
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                            <i class="fas fa-times"></i> Cerrar
+                            Cerrar
                         </button>
                         <button type="submit" class="btn btn-success">
-                            <i class="fas fa-save"></i> Guardar
+                            Guardar
                         </button>
                     </div>
                 </form>
@@ -527,10 +527,10 @@
                             
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                    <i class="fas fa-times"></i> Cerrar
+                                    Cerrar
                                 </button>
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="fas fa-save"></i> Actualizar
+                                    Actualizar
                                 </button>
                             </div>
                         </form>
