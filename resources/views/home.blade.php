@@ -394,34 +394,34 @@
                                             <td class="text-end">S/ ${parseFloat(detalle.asignacion_familiar).toFixed(2)}</td>
                                         </tr>
                                         <tr class="table-info">
-                                            <td><strong>= Sueldo Bruto</strong></td>
+                                            <td><strong>Sueldo Bruto =</strong></td>
                                             <td class="text-end"><strong>S/ ${parseFloat(detalle.sueldo_bruto).toFixed(2)}</strong></td>
                                         </tr>
                                         <tr>
                                             <td colspan="2" class="table-secondary"><strong>Descuentos</strong></td>
                                         </tr>
                                         <tr class="table-danger">
-                                            <td>- AFP Aportación Obligatoria (10%)</td>
+                                            <td>AFP Aportación Obligatoria (10%)</td>
                                             <td class="text-end">S/ ${parseFloat(detalle.descuentos.afp_aportacion).toFixed(2)}</td>
                                         </tr>
                                         <tr class="table-danger">
-                                            <td>- AFP Comisión (2.5%)</td>
+                                            <td>AFP Comisión (2.5%)</td>
                                             <td class="text-end">S/ ${parseFloat(detalle.descuentos.afp_comision).toFixed(2)}</td>
                                         </tr>
                                         <tr class="table-danger">
-                                            <td>- Renta de 5ta Categoría (10%)</td>
+                                            <td>Renta de 5ta Categoría (10%)</td>
                                             <td class="text-end">S/ ${parseFloat(detalle.descuentos.renta_quinta).toFixed(2)}</td>
                                         </tr>
                                         <tr class="table-danger">
-                                            <td>- EPS</td>
+                                            <td>EPS</td>
                                             <td class="text-end">S/ ${parseFloat(detalle.descuentos.eps).toFixed(2)}</td>
                                         </tr>
                                         <tr class="table-warning">
-                                            <td><strong>= Total Descuentos</strong></td>
+                                            <td><strong>Total Descuentos =</strong></td>
                                             <td class="text-end"><strong>S/ ${parseFloat(detalle.descuentos.total).toFixed(2)}</strong></td>
                                         </tr>
                                         <tr class="table-primary">
-                                            <td><strong>= SUELDO NETO</strong></td>
+                                            <td><strong>SUELDO NETO =</strong></td>
                                             <td class="text-end"><h5 class="mb-0"><strong>S/ ${parseFloat(detalle.sueldo_neto).toFixed(2)}</strong></h5></td>
                                         </tr>
                                     </tbody>
@@ -487,7 +487,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Fecha de Nacimiento <span class="text-danger">*</span></label>
-                                        <input type="date" class="form-control" name="fecha_nacimiento" value="${worker.fecha_nacimiento}" max="${new Date().toISOString().split('T')[0]}" required>
+                                        <input type="date" class="form-control" name="fecha_nacimiento" value="${worker.fecha_nacimiento.split('T')[0]}" max="${new Date().toISOString().split('T')[0]}" required>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Sexo <span class="text-danger">*</span></label>
@@ -516,7 +516,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Fecha de Ingreso <span class="text-danger">*</span></label>
-                                        <input type="date" class="form-control" name="fecha_ingreso" value="${worker.fecha_ingreso}" required>
+                                        <input type="date" class="form-control" name="fecha_ingreso" value="${worker.fecha_ingreso.split('T')[0]}" max="${new Date().toISOString().split('T')[0]}" required>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Sueldo (S/) <span class="text-danger">*</span></label>
